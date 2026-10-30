@@ -12,9 +12,9 @@ I have hands-on experience working with **Java, Spring Boot, REST APIs, Kafka, S
 
 - 💻 Java Backend Developer
 - ☕ Working primarily with **Java & Spring Boot**
-- 🏗️ Interested in **Microservices & Distributed Systems**
+- 🏗️ Building **Microservices & Distributed Systems**
 - ⚡ Working with **Kafka & Event-Driven Architecture**
-- 🗄️ Experience with **SQL, PostgreSQL, MongoDB & Redis**
+- 🗄️ Experience with **SQL, MySQL, PostgreSQL, MongoDB & Redis**
 - 🔐 Experience with **Spring Security & JWT**
 - 🐳 Working with **Docker & Linux**
 - 🔄 Familiar with **CI/CD workflows**
@@ -55,15 +55,15 @@ I have hands-on experience working with **Java, Spring Boot, REST APIs, Kafka, S
 
 ---
 
-## ⭐ Featured Project
+## ⭐ Featured Projects
 
 ### WhatsApp Broadcast & Real-Time Messaging System
 
-A production-oriented messaging platform built using **Spring Boot, Kafka, PostgreSQL, MongoDB, Redis, and JWT**.
+A production-oriented messaging platform built using **Spring Boot, Kafka, MySQL, PostgreSQL, MongoDB, Redis, and JWT**.
 
 The system is designed around microservices and event-driven processing for handling WhatsApp messaging workflows.
 
-### Key Features
+#### Key Features
 
 - 📱 WhatsApp message and template processing
 - 📢 Bulk campaign broadcasting
@@ -72,11 +72,16 @@ The system is designed around microservices and event-driven processing for hand
 - 🔐 JWT-based authentication
 - 🧩 Idempotent message processing
 - 📝 Audit logging
-- 🗄️ PostgreSQL & MongoDB persistence
+- 🗄️ MySQL, PostgreSQL & MongoDB persistence
 - ⚡ Redis-based processing and caching
+- 🚦 Redis token-bucket rate limiting with a local fallback
+- ⚖️ Per-number queues that rotate between campaigns, so a large campaign can't block a small one
+- 🔁 Retries and dead-letter events for failed sends
+- 🪝 Handles all Meta webhooks through one endpoint: verifies and de-duplicates each event, saves it to MongoDB, replies 200, then publishes to Kafka in the background so a Kafka failure can't lose an event
+- 🚚 Built a re-runnable Spring Boot batch job that moved a legacy monolith database into the new service schema, including 1.4M+ contacts and 4.3M+ campaign recipients
 - 🐳 Docker-based development and deployment
 
-### Architecture
+#### Architecture
 
 ```text
                          Client
@@ -99,6 +104,22 @@ The system is designed around microservices and event-driven processing for hand
               ▼                         ▼
        WhatsApp APIs             Audit / Storage
 ```
+
+Code: [broadcast_kafka](https://github.com/Ashish12meena/broadcast_kafka) · [apargo_webhook](https://github.com/Ashish12meena/apargo_webhook) · [apargo_audit_log](https://github.com/Ashish12meena/apargo_audit_log)
+
+### Blog Application
+
+A blogging backend with posts, comments, likes, follows, feeds, and admin tools, built as a REST API using **Spring Boot, MySQL, Redis, JWT, and AWS S3**.
+
+Includes a personalized feed that mixes posts from followed authors, user interests, and trending content, then ranks them and skips posts the user has already seen.
+
+Code: [blog_application](https://github.com/Ashish12meena/blog_application)
+
+### Electric Shop
+
+An e-commerce website with product search, cart, orders, and an admin dashboard, built using **Java, JSP, Servlets, and MySQL**.
+
+Code: [Electric-shop](https://github.com/Ashish12meena/Electric-shop)
 
 ---
 
@@ -139,27 +160,10 @@ Areas I focus on:
 
 ---
 
-## 📊 GitHub Stats
-
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=Ashish12meena&show_icons=true&hide_border=true&count_private=true" height="170"/>
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Ashish12meena&layout=compact&hide_border=true" height="170"/>
-</p>
-
----
-
 ## 🔥 GitHub Streak
 
 <p align="center">
   <img src="https://streak-stats.demolab.com?user=Ashish12meena&hide_border=true" />
-</p>
-
----
-
-## 📈 Contribution Activity
-
-<p align="center">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=Ashish12meena&hide_border=true" />
 </p>
 
 ---
@@ -186,8 +190,14 @@ I'm currently deepening my understanding of:
   <a href="https://github.com/Ashish12meena">
     <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
   </a>
-  <a href="https://www.linkedin.com/in/">
+  <a href="https://www.linkedin.com/in/ashish-meena-a74263237/">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+  </a>
+  <a href="https://ashish12meena.github.io/Portfolio-Ashish/">
+    <img src="https://img.shields.io/badge/Portfolio-02569B?style=for-the-badge&logo=googlechrome&logoColor=white" />
+  </a>
+  <a href="mailto:ashishmeena100603@gmail.com">
+    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" />
   </a>
 </p>
 
